@@ -3,12 +3,14 @@
 <head>
     <title>Weather App</title>
     <!--Stylesheets-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
 
     <!--Scripts-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="JS/app.js"></script>
 </head>
 
@@ -34,7 +36,7 @@
     
     <!--Search Bar-->
     <br>
-    <div class="input-group d-flex justify-content-center">
+    <div class="input-group container-lg justify-content-center">
       <div class="form-outline">
         <input type="search" id="input" class="form-control" placeholder="Input a location!"/>
       </div>
@@ -42,11 +44,29 @@
         <i class="fa fa-search"></i>
       </button>
     </div>
+    <br>
     <!--End of Search Bar-->
 
-    <div id="weather">
+    <div id="weather" class="container-lg">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" href="#demo" data-toggle="collapse">
+          <img class="img" src="assets/rainycloud.png">
+          <span class="date display-1">Sunday, April 25</span>
+            <span id="tempspan">
+              <span id="tempspanlow">89&#730;</span>
+              /
+              <span id="tempspanhigh">90&#730;</span>
+            </span>
+          <div id="demo" class="collapse">
+            I'm going to put weather info here!
+          </div>
 
+        </li>
+      </ul>
     </div>
+
+    
+    
 
 </body>
 </html>

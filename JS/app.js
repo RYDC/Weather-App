@@ -9,18 +9,27 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function search(){
     let input = document.getElementById("input").value;
+    getLoc(input)
+
 }
 
 
 function getLoc(location){
     axios.get("http://open.mapquestapi.com/geocoding/v1/address?key="+GEOCODE_KEY+"&location="+location)
-    .then(response => {
-        console.log(response.data.results[0].locations[0].latLng)
+    .then(locResp => {
+        getWeather(locResp.data.results[0].locations[0].latLng)
     })
     .catch(error => console.error(error))
 }
 
-function getWeather(){
+function getWeather(latLng){
+    let lat = latLng.lat
+    let lon = latLng.lng
+    axios.get("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude=minutely,hourly&appid="+WEATHER_KEY)
+    .then(response => {
+        //console.log(response)
+        //Generate Elements
+    })
 }
 
 

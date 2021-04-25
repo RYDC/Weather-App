@@ -1,0 +1,22 @@
+img {
+   width:75px; 
+}
+
+.date {
+    font-size:larger;
+    font-weight:600;
+}
+
+#tempspan {
+    float:right;
+    font-size:xx-large;
+    font-weight:600;
+}
+
+#tempspanhigh {
+    color:orange
+}
+
+#tempspanlow {
+    color:lightblue;
+}
