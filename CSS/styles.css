@@ -5,6 +5,23 @@ img {
 .date {
     font-size:larger;
     font-weight:600;
+    padding-left:7.5px;
+}
+
+.downarrow {
+    color:black;
+    position:absolute;
+    bottom:0;
+    right:50%;
+}
+
+.details {
+    font-size:large;
+    font-weight:450;
+}
+
+.downarrow:hover {
+    color:black;
 }
 
 #tempspan {
@@ -20,3 +37,4 @@ img {
 #tempspanlow {
     color:lightblue;
 }
+
