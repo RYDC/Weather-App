@@ -43,7 +43,12 @@ function getWeather(latLng){//Take long and lat to make a request for weather
             //Creating Image 
             let image = document.createElement("img")
             image.classList="image"
-            image.src="assets/rainycloud.png"
+            if(weekly.weather[0].main=="Rain")
+                image.src="assets/rainycloud.png"
+            else if(weekly.weather[0].main=="Clouds")
+                image.src="assets/cloudy.png"
+            else
+                image.src="assets/clearsky.png"
             listItem.appendChild(image)
 
             //Creating day label
@@ -80,6 +85,8 @@ function getWeather(latLng){//Take long and lat to make a request for weather
             //expand arrow icon
             let arrow = document.createElement("i")
             arrow.classList="fa fa-angle-down"
+            arrow.id = "#expand" + i + "arrow"
+            arrow.addEventListener("click",toggle)
             expand.appendChild(arrow)
             listItem.appendChild(expand)
 
@@ -110,10 +117,14 @@ function getWeather(latLng){//Take long and lat to make a request for weather
 
             listItem.appendChild(details)
             workspace.appendChild(listItem)
-
         }
         
     })
+
+    function toggle() {
+        this.classList.toggle("fa-angle-up");
+        this.classList.toggle("fa-angle-down");
+      }
 }
 
 
